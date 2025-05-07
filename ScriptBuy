@@ -1,0 +1,92 @@
+local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/DobruyAlmaznikScripts/RealScript123/refs/heads/main/lib2.lua'))()
+
+--/ Changable Colors (Optional)
+library.headerColor = Color3.fromRGB(51, 158, 190)
+library.companyColor = Color3.fromRGB(163, 151, 255)
+library.acientColor = Color3.fromRGB(159, 115, 255)
+
+
+--/ Required configuation (Check the xsx lib.lua for more configuation options)
+library:Init({
+    version = "3.2",
+    title = "Grow A Garden",
+    company = "Menu By xhynii",
+    keybind = Enum.KeyCode.RightShift, -- (Optional, automatically sets the best keybind)
+    BlurEffect = false,
+})
+
+--/ Intro (Optional)
+library:BeginIntroduction()
+library:AddIntroductionMessage("Loading.")
+wait(0.5)
+library:AddIntroductionMessage("Loading..")
+wait(0.5)
+library:AddIntroductionMessage("Loading...")
+wait(0.5)
+library:AddIntroductionMessage("Successfully Loaded!")
+wait(1)
+library:AddIntroductionMessage("Open With Right Shift!")
+wait(2)
+library:EndIntroduction()
+
+
+local Tab1 = library:NewTab("Main")
+Tab1:NewSection("Main")
+
+--/ Sell Hand
+local Button1 = Tab1:NewButton("Sell Hand", function()
+game:GetService("ReplicatedStorage"):WaitForChild("Sell_Item", 9e9):FireServer()
+end)
+--/ Sell Inv
+local Button1 = Tab1:NewButton("Sell Inv", function()
+game:GetService("ReplicatedStorage"):WaitForChild("Sell_Inventory", 9e9):FireServer()
+end)
+--/ Plant
+local Button1 = Tab1:NewButton("Plant", function()
+    local player = game.Players.LocalPlayer
+    local character = player.Character
+    local tool = character and character:FindFirstChildOfClass("Tool") -- Aktuell gehaltenes Tool
+
+    -- Standardfrucht, falls nichts ausgerГѓВјstet ist
+    local fruit = ""  
+
+    -- Liste der mГѓВ¶glichen FrГѓВјchte
+    local fruitList = {
+        "Carrot", "Strawberry", "Blueberry", "Tomato", "Corn", 
+        "Watermelon", "Pumpkin", "Apple", "Bamboo", "Coconut", 
+        "Cactus", "Dragon", "Mango"
+    }
+
+    -- Falls ein Tool ausgerГѓВјstet ist, prГѓВјfen, ob es eine Frucht ist
+    if tool then
+        local toolName = tool.Name:lower() -- Toolname in Kleinbuchstaben fГѓВјr bessere Erkennung
+
+        for _, f in ipairs(fruitList) do
+            if toolName:find(f:lower()) then
+                fruit = f
+                break -- Sobald eine Frucht erkannt wird, abbrechen
+            end
+        end
+    end
+
+    -- Position des Spielers abrufen und das Event auslГѓВ¶sen
+    if character and character:FindFirstChild("HumanoidRootPart") then
+        local position = character.HumanoidRootPart.Position
+        local args = {
+            [1] = Vector3.new(position.X, position.Y, position.Z);
+            [2] = fruit;
+        }
+
+        game:GetService("ReplicatedStorage"):WaitForChild("Plant_RE", 9e9):FireServer(unpack(args))
+    end
+end)
+--/ Buy
+local Selector1 = Tab1:NewSelector("Buy", "What You Want ?", 
+    {"Carrot", "Strawberry", "Blueberry", "Tomato", "Corn", "Watermelon", "Pumpkin", "Apple", 
+    "Bamboo", "Coconut", "Cactus", "Dragon", "Mango"}, function(selectedFruit)
+    
+    -- Event auslГѓВ¶sen, um die ausgewГѓВ¤hlte Frucht zu kaufen
+    game:GetService("ReplicatedStorage"):WaitForChild("GameEvents", 9e9)
+        :WaitForChild("BuySeedStock", 9e9)
+        :FireServer(selectedFruit)
+end)
