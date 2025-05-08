@@ -162,7 +162,7 @@ Getkey.MouseButton1Down:Connect(function()
 	local Players = game:GetService("Players")
 	local UIS = game:GetService("UserInputService")
 	local input = LinkText
-	input.Text = "https://loot-link.com/s?mBWna15X"
+	input.Text = "https://loot-link.com/s?q1VQizkB"
 end)
 
 Exit.MouseButton1Down:Connect(function()
