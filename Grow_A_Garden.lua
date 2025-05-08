@@ -150,8 +150,8 @@ TextBox:GetPropertyChangedSignal("Text"):Connect(function(text)
 end)
 
 Checkkey.MouseButton1Down:Connect(function()
-	if TextBox.Text =="Grow_A_Garden_2025" then
-    loadstring(game:HttpGet("https://github.com/DobruyAlmaznikScripts/RealScript123/blob/main/InTest.lua"))()
+	if TextBox.Text =="Grow_A_Garden_2025" or "CrocodiloBomb0PDila" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DobruyAlmaznikScripts/RealScript123/refs/heads/main/InTest.lua"))()
     wait(0.5)
 		if KeyGui then
 			KeyGui:Destroy()
