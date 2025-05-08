@@ -150,7 +150,7 @@ TextBox:GetPropertyChangedSignal("Text"):Connect(function(text)
 end)
 
 Checkkey.MouseButton1Down:Connect(function()
-	if TextBox.Text =="Grow_A_Garden_2025","CrocodiloBomb0PDila" then
+	if TextBox.Text =="Grow_A_Garden_2025" then
 					if KeyGui then
 			KeyGui:Destroy()
 		end
