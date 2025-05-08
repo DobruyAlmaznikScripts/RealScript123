@@ -151,11 +151,12 @@ end)
 
 Checkkey.MouseButton1Down:Connect(function()
 	if TextBox.Text =="Grow_A_Garden_2025","CrocodiloBomb0PDila" then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DobruyAlmaznikScripts/RealScript123/refs/heads/main/InTest.lua"))()
-    wait(0.5)
-		if KeyGui then
+					if KeyGui then
 			KeyGui:Destroy()
 		end
+			wait(2)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DobruyAlmaznikScripts/RealScript123/refs/heads/main/InTest.lua"))()
+
 	end
 end)
 Getkey.MouseButton1Down:Connect(function()
