@@ -36,7 +36,7 @@ Tab1:NewSection("Main")
 --/ Buy
 local Selector1 = Tab1:NewSelector("Buy", "What You Want ?", 
     {"Carrot", "Strawberry", "Blueberry", "Tomato", "Corn", "Watermelon", "Pumpkin", "Apple", 
-    "Bamboo", "Coconut", "Cactus", "Dragon", "Mango"}, function(selectedFruit)
+    "Bamboo", "Coconut", "Cactus", "Dragon", "Mango", "Cacao", "Pepper"}, function(selectedFruit)
     
     -- Event auslГѓВ¶sen, um die ausgewГѓВ¤hlte Frucht zu kaufen
     game:GetService("ReplicatedStorage"):WaitForChild("GameEvents", 9e9)
