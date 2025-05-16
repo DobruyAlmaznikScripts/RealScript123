@@ -43,3 +43,39 @@ local Selector1 = Tab1:NewSelector("Buy", "What You Want ?",
         :WaitForChild("BuySeedStock", 9e9)
         :FireServer(selectedFruit)
 end)
+local Selector2 = Tab1:NewSelector("Buy", "What You Want ?", 
+    {"Carrot", "Strawberry", "Blueberry", "Tomato", "Corn", "Watermelon", "Pumpkin", "Apple", 
+    "Bamboo", "Coconut", "Cactus", "Dragon", "Mango", "Cacao", "Pepper"}, function(selectedFruit)
+    
+    -- Event auslГѓВ¶sen, um die ausgewГѓВ¤hlte Frucht zu kaufen
+    game:GetService("ReplicatedStorage"):WaitForChild("GameEvents", 9e9)
+        :WaitForChild("BuySeedStock", 9e9)
+        :FireServer(selectedFruit)
+end)
+local Selector3 = Tab1:NewSelector("Buy", "What You Want ?", 
+    {"Carrot", "Strawberry", "Blueberry", "Tomato", "Corn", "Watermelon", "Pumpkin", "Apple", 
+    "Bamboo", "Coconut", "Cactus", "Dragon", "Mango", "Cacao", "Pepper"}, function(selectedFruit)
+    
+    -- Event auslГѓВ¶sen, um die ausgewГѓВ¤hlte Frucht zu kaufen
+    game:GetService("ReplicatedStorage"):WaitForChild("GameEvents", 9e9)
+        :WaitForChild("BuySeedStock", 9e9)
+        :FireServer(selectedFruit)
+end)
+local Selector4 = Tab1:NewSelector("Buy", "What You Want ?", 
+    {"Carrot", "Strawberry", "Blueberry", "Tomato", "Corn", "Watermelon", "Pumpkin", "Apple", 
+    "Bamboo", "Coconut", "Cactus", "Dragon", "Mango", "Cacao", "Pepper"}, function(selectedFruit)
+    
+    -- Event auslГѓВ¶sen, um die ausgewГѓВ¤hlte Frucht zu kaufen
+    game:GetService("ReplicatedStorage"):WaitForChild("GameEvents", 9e9)
+        :WaitForChild("BuySeedStock", 9e9)
+        :FireServer(selectedFruit)
+end)
+local Selector5 = Tab1:NewSelector("Buy", "What You Want ?", 
+    {"Carrot", "Strawberry", "Blueberry", "Tomato", "Corn", "Watermelon", "Pumpkin", "Apple", 
+    "Bamboo", "Coconut", "Cactus", "Dragon", "Mango", "Cacao", "Pepper"}, function(selectedFruit)
+    
+    -- Event auslГѓВ¶sen, um die ausgewГѓВ¤hlte Frucht zu kaufen
+    game:GetService("ReplicatedStorage"):WaitForChild("GameEvents", 9e9)
+        :WaitForChild("BuySeedStock", 9e9)
+        :FireServer(selectedFruit)
+end)
